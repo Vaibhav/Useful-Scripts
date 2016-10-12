@@ -9,7 +9,7 @@ u'seaborn-notebook',
 u'classic',
 u'seaborn-ticks',
 u'grayscale',
-u'bmh',
+u'bmh'
 u'seaborn-talk',
 u'dark_background',
 u'ggplot',

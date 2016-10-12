@@ -19,7 +19,6 @@ use IO::Socket::SSL;
 use Data::Dumper;
 
 
-
 my $mech = WWW::Mechanize->new(ssl_opts => {
 
     SSL_verify_mode => IO::Socket::SSL::SSL_VERIFY_NONE,
@@ -28,31 +27,29 @@ my $mech = WWW::Mechanize->new(ssl_opts => {
 
 });
 
+
 $mech->agent_alias( 'Linux Mozilla' );
+
 
 $mech->max_redirect(0);
 
 
-
-$mech->credentials( "user1" ,"1resu");
-
+$mech->credentials( "user" ,"pass");
 
 
-$mech->proxy(['http'] , 'http://10.168.100.146:8080');
+$mech->proxy(['http'] , 'HTTP[IP Address]');
 
 
 
 # browser will open the auth debug page
 
-my $url = "http://sg-146.qa-auth11.waterloo.bluecoat.com";
+my $url = "http[auth url]";
 
 $mech->get("http://www.example.com");
 
 my $cookie_jar = $mech->cookie_jar; # returns a HTTP::Cookies object
 
 $cookie_jar->scan(sub { print Dumper \@_ });
-
-
 
 
 
